@@ -9,3 +9,7 @@ My rig is:
  - Raspberry Pi 2
 
 I have been monitoring the uptime of the Raspberry PI 2 for half a year now, and the results are in the uptime.txt and uptime.db files. The uptime.db is a sqlite3 database with the table "solaruptime". It's a one-liner script that gets uptime and the current date, and adds to it. The uptime.txt is just some "echo date ; echo uptime" or something like that.
+
+To extract the biggest uptime of a given day:
+
+select date,time,max(uptime) FROM solaruptime GROUP BY date;
